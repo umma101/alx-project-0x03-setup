@@ -1,18 +1,19 @@
 import Button from "@/components/common/Button";
 import { useRouter } from "next/router";
 
-interface pageRouteProps {
-  pageRoute: string;
+interface PageRouteProps {
+  pageRoute: string
 }
-export default function Home ()
-{
-  const router = useRouter();
-  
-// Imeperative routing with useRouter
+
+export default function Home() {
+  const router = useRouter()
+
+  // Imeperative routing with useRouter
   const routeToNextPage  = ({ pageRoute }: PageRouteProps) => {
     router.push(pageRoute, undefined, { shallow: false})
   }
-return (
+
+  return (
     <div className="min-h-screen bg-gray-100 flex flex-col justify-center items-center text-center">
       {/* Welcome Message */}
       <h1 className="text-4xl font-bold text-gray-800 mb-4">
@@ -32,4 +33,3 @@ return (
     </div>
   );
 }
-
